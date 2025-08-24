@@ -1,0 +1,28 @@
+.button {
+    font-weight: 900;
+    transition: 0.3s ease-out;
+    border: none;
+    background-color: rgb(235, 153, 2);
+    
+    cursor: pointer;
+}
+
+.button_sm {
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.button_lg {
+    padding: calc(8px*2) calc(12px*2);
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgb(216, 142, 3);
+}
+
+@media(prefers-color-scheme: light){
+    .button {
+        color: #fff;
+    }
+}
