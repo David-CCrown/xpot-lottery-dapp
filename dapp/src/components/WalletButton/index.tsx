@@ -2,8 +2,13 @@ import styles from "./WalletButton.module.css"
 
 const WalletButton = ({size="sm"}:{size?: "sm"|"lg"})=> {
 
+    type EthereumProvider = {
+        request: (args: { method: string; params?: unknown[] }) => Promise<unknown>
+    }
+
     const connectWallet = async ()=> {
-        const {ethereum} = window;
+        const win = window as unknown as { ethereum?: EthereumProvider };
+        const ethereum = win.ethereum;
         if(ethereum){
             console.log("Ethereum Metamask")
             console.log(ethereum)
